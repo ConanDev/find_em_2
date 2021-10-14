@@ -2,16 +2,16 @@ const express = require('express');
 const cors = require('cors')
 
 const Router = express()
-const selfCoor = [51.5144636,-0.142571]
+const selfCoor = [51.5144636,-0.142571] //coordinates of our own office
 const partners = require('./partners.json')
-const allCompanies = DisplayStats()
+const allCompanies = GetData()
 let validPartners = null
 let inputRange = -1
 
 Router.use(cors())
 Router.use(express.json());
 
-function DisplayStats(){
+function GetData(){
   let allCompanies = []
   partners.forEach((p1) => {
       const organization = p1.organization
