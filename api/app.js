@@ -33,6 +33,7 @@ function GetData(){
   })
   return allCompanies
 }
+
 //*<newCode>
 Router.post('/api/fetchData', (req, res) => {
   if(!req){
@@ -46,7 +47,6 @@ Router.post('/api/fetchData', (req, res) => {
     const received = JSON.stringify(req.body)
     const receivedObject = JSON.parse(received)
     inputRange = parseFloat(receivedObject.inputRange)
-
     validPartners = PartnersInRange(allCompanies)
     validPartners = JSON.stringify(validPartners)
 
@@ -56,7 +56,6 @@ Router.post('/api/fetchData', (req, res) => {
     })
   }
   
-      
 })
 //*</newCode>
 
